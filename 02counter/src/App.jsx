@@ -26,7 +26,7 @@ function App() {
 
   return (
  <>
- <h1>Chai aur react</h1>
+ <h1>Counter game</h1>
  <h2>counter value: {counter}</h2>
 
  <button
