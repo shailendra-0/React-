@@ -13,17 +13,20 @@ function App() {
 
   //useref hook
   const passwordRef=useRef(null)
+  //inorder to give highlight
+
+
   const passwordGenerator=useCallback(()=>{
     let pass=''
     let str='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
     if(numberAllowed) str+="0123456789"
     if(characterAllowed) str+="!@#$%^&*[]{}~`"
 
-    for(let i=0;i<length;i++){
+    for(let i=1;i<=length;i++){
       let char=Math.floor(Math.random()*str.length+1)
       pass+=str.charAt(char);
- 
-    }
+  
+    }  
 
     setPassword(pass)
 
@@ -36,6 +39,8 @@ function App() {
     // passwordRef.current?.setSelectionRange(0,999)
     window.navigator.clipboard.writeText(password)
   },[password])
+
+
   useEffect(()=>{
     passwordGenerator()
     
